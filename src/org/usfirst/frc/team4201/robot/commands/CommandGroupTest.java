@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class CommandGroupTest extends CommandGroup {
 
     public CommandGroupTest() {
+    	addSequential(new TimeoutTest(0, 0));
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

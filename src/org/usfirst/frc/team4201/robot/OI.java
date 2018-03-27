@@ -47,7 +47,7 @@ public class OI {
 	public Joystick testController;
 	public Button[] testButtons = new Button[10];
 	
-	public OI(){
+	public OI() {
 		testController = new Joystick(0);
 		
 		for(int i = 0; i < testButtons.length; i++)
