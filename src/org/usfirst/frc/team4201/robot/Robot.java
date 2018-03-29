@@ -38,6 +38,7 @@ public class Robot extends TimedRobot {
 	public void robotInit() {
 		oi = new OI();
 		m_chooser.addDefault("Default Auto", new CommandGroupTest());
+		m_chooser.addObject("Sensor Test", new SensorEvaluation());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}
