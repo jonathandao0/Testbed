@@ -8,14 +8,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
-public class TimeoutTest extends Command {
+public class SchedulerTest extends Command {
 	Timer stopwatch;
 	public static int index;
 	int i;
 	long wait;
 	double totalTime;
 	
-	public TimeoutTest(double timeout, long wait) {
+	public SchedulerTest(double timeout, long wait) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	
@@ -26,7 +26,7 @@ public class TimeoutTest extends Command {
     	stopwatch = new Timer();
     }
 	
-    public TimeoutTest(double timeout) {
+    public SchedulerTest(double timeout) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	

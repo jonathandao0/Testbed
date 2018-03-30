@@ -39,6 +39,7 @@ public class Robot extends TimedRobot {
 		oi = new OI();
 		m_chooser.addDefault("Default Auto", new CommandGroupTest());
 		m_chooser.addObject("Sensor Test", new SensorEvaluation());
+		m_chooser.addObject("Timeout Test", new TimeoutTest(3, 3));
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}
@@ -56,6 +57,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
+
+		testSubsystem.updateSmartDashboard();
 	}
 
 	/**
@@ -92,6 +95,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void autonomousPeriodic() {
 		Scheduler.getInstance().run();
+
+		testSubsystem.updateSmartDashboard();
 	}
 
 	@Override
@@ -111,6 +116,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+
+		testSubsystem.updateSmartDashboard();
 	}
 
 	/**
@@ -118,5 +125,10 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void testPeriodic() {
+		
+		testSubsystem.updateSmartDashboard();
+	}
+	
+	public void schedulerPrint(){
 	}
 }

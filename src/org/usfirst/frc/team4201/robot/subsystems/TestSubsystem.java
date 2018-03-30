@@ -10,6 +10,7 @@ package org.usfirst.frc.team4201.robot.subsystems;
 import org.usfirst.frc.team4201.robot.commands.LimitSwitchTest;
 
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -24,11 +25,13 @@ public class TestSubsystem extends Subsystem {
 	
 	public DigitalInput limitSwitchTest = new DigitalInput(0);
 	public AnalogInput sensor = new AnalogInput(0);
-	
+	public AnalogPotentiometer pot = new AnalogPotentiometer(sensor, 1080, 0);
 	
 	public void updateSmartDashboard() {
-		SmartDashboard.putNumber("Counter", counter);
 		SmartDashboard.putBoolean("LimitSwitchValue", limitSwitchTest.get());
+		SmartDashboard.putNumber("Counter", counter);
+		SmartDashboard.putNumber("Potentiometer", pot.get());
+		SmartDashboard.putNumber("Potentiometer Voltage", sensor.getAverageVoltage());
 	}
 	
 	public void initDefaultCommand() {
